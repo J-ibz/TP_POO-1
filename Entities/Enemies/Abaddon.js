@@ -12,7 +12,7 @@ export default class Abaddon extends Entity {
 			pierceDef : 0,
 		}
 		this.hitPoint = 500;
-		this.deathLine = 'Aaarghh I will come back stronger and harder'
+		this.deathLine = 'Abaddon says: Aaarghh I will come back stronger and harder'
 	}
 
 	/**

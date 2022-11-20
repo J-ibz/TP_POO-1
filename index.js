@@ -32,6 +32,7 @@ class Manager {
 	}
 
 	OnAttack() {
+		while (this.enemies.boss.hitPoint > 0) {		
 		Object.values(this.party)
 		.sort((a, b) => {
 			if (a.speed == b.speed) {
@@ -42,16 +43,19 @@ class Manager {
 			if (a.speed > b.speed) return -1 
 			else return 1
 		})
-		.forEach(partyMember => {
-			while (this.enemies.boss.hitPoint > 0) {
-				const rawDmg = partyMember.attacks(this.enemies.boss)
-				this.enemies.boss.lines(rawDmg)
-				this.enemies.boss.hitPoint -= rawDmg.value	
-				if (this.enemies.boss.hitPoint - rawDmg.value < 1) console.log(this.enemies.boss.deathLine);
-				this.enemies.boss.isAlive = false;
+		.every(partyMember => {
+			if (this.enemies.boss.hitPoint >= 0) {
+				const netDmg = partyMember.attacks(this.enemies.boss)
+				this.enemies.boss.lines(netDmg)
+				this.enemies.boss.hitPoint -= netDmg.value 
+				console.log(this.enemies.boss.hitPoint);
+				return true
+			} else if ((this.enemies.boss.hitPoint <= 0)){
+				console.log(`%c${this.enemies.boss.deathLine}`,"color: red;")
+				return false;
 			}
 		});
-	}
+	}}
 }
 
 const battle = new Manager();
