@@ -1,0 +1,47 @@
+Using classes and only classes (except for creating the manager)
+
+A class that will be called Manager that will create instances and then will start the battle
+
+having a party of 5 members
+each members will have a diffrente class
+Each class will have a different 'speed' stat that will determine the order they attack (highter is faster)
+if two character have the same speed a random will be executed to know witch one will attack first
+	- a novice
+		- on Creation : say 'Hello i am Mickael'
+		- on Attack : say 'Mickael inflincted 4 physical damages using a broken stick'
+		- speed : 2
+	- a tank
+		- on Creation : say 'Hello i am Gabriel'
+		- on Attack : say 'Gabriel inflincted 13 physical damages using a shield ?'
+		- speed : 2
+	- an archer
+		- on Creation : say 'Hello i am Raphael'
+		- on Attack : say 'Raphael inflincted 9 percing damages using bow and arrow'
+		- speed : 5
+	- a warrior
+		- on Creation : say 'Hello i am Uriel'
+		- on Attack : say 'Uriel inflincted 15 physical damages using a big sword'
+		- speed : 4
+	- a mage
+		- on Creation : say 'Hello i am Lucifer'
+		- on Attack : say 'Lucifer inflincted 30 magic damages using the explosion spell'
+		- speed : 2
+
+Bonus :
+	Create an Enemy just before the start of the battle that will say 'My name is [Abaddon] Angel of Destruction'
+	when party members will atack the damages will by inflincted to that enemy
+	The enemy will shout a setence depending of the amount of damage receiving
+	0 - 10 physical => 'Feeled nothing peasent'
+	11 - 20 physical -> 'Go harder dady'
+	0 - 10 percing -> 'How that felt ... good ?'
+	? magical -> 'Magic damage are reduced by half on me'
+	Damages will remove 'health' from that enemy 
+	he also will have armor that reduce physical damages by 3 and a passive that will reduce magic damage by 50%
+	wink wink at the end of the battle the enemy will 'die' and shout 'I will come back stronger and harder'
+	
+Tips :
+	- 2 classes branch one for classes and one for weapons :)
+	- weapons will have additional damage
+	- name and "raw" damages are passed on class instance creation
+	- first calculate the number of total damage to know the 'health' of the enemy
+	- type of damages comes from the classe 
